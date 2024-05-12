@@ -9,7 +9,7 @@ const CartContext = createContext({
 function cartReducer(state, action) {
     if (action.type === 'ADD_ITEM') {
         const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id);
-        const updatedItems = [...state.items];
+        let updatedItems = [...state.items];
 
         if (existingCartItemIndex > -1) {
             const existingItem = state.items[existingCartItemIndex];
@@ -26,13 +26,13 @@ function cartReducer(state, action) {
     }
 
     if (action.type === 'REMOVE_ITEM') {
-        const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id);
-        const updatedItems = [...state.items];
+        const existingCartItemIndex = state.items.findIndex((item) => item.id === action.id);
+        let updatedItems = [...state.items];
 
         if (existingCartItemIndex > -1) {
             const existingItem = state.items[existingCartItemIndex];
             if (existingItem.quantity === 1) {
-                updatedItems = updatedItems.filter(item => item.id === action.id)
+                updatedItems = updatedItems.filter(item => item.id !== action.id)
             } else {
                 const updatedItem = { ...existingItem, quantity: existingItem.quantity - 1 }
                 updatedItems = updatedItems.map(item => item.id === updatedItem.id ? updatedItem : item)

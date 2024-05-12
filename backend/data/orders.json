@@ -1,1 +1,1 @@
-[]
+[{"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":1},{"id":"m3","name":"Caesar Salad","price":"7.99","description":"Romaine lettuce tossed in Caesar dressing, topped with croutons and parmesan shavings.","image":"images/caesar-salad.jpg","quantity":1}],"customer":{"name":"Kuba","email":"test@test.pl","street":"test","postal-code":"02-957","city":"Warsaw"},"id":"838.9095060661325"}]
